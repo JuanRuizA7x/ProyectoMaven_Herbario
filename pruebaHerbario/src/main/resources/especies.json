@@ -1,0 +1,79 @@
+{
+  "ESPECIE": [
+    {
+      "id_especie": "1",
+      "creacion": "2013-07-20",
+      "fecha_recoleccion": "2013-07-15",
+      "imagen": "String",
+      "latitud": "4°31′45″N",
+      "longitud": "75°38′27″O",
+      "nombre": "Cattleya labiata",
+      "observaciones": "dos, comprimidos. Hojas oblongo elipticas, obtusas. Espata simple o doble.",
+      "divipola": "1",
+      "genero": "1"
+    },
+    {
+      "id_especie": "2",
+      "creacion": "2015-02-15",
+      "fecha_recoleccion": "2015-02-05",
+      "imagen": "String",
+      "latitud": "4°32′20″N",
+      "longitud": "75°40′21″O",
+      "nombre": "Cicer arietinum",
+      "observaciones": "ual. El garbanzo es una legumbre con importantes cualidades culinarias y nutritivas.",
+      "divipola": "2",
+      "genero": "2"
+    },
+    {
+      "id_especie": "3",
+      "creacion": "2012-12-30",
+      "fecha_recoleccion": "2012-12-25",
+      "imagen": "String",
+      "latitud": "4°19′58″N",
+      "longitud": "75°42′20″O",
+      "nombre": "Coffea",
+      "observaciones": " familia de las rubiaceas, nativas del sur de Asia y el Africa subtropical.",
+      "divipola": "3",
+      "genero": "3"
+    }
+    ,
+    {
+      "id_especie": "4",
+      "creacion": "2012-12-30",
+      "fecha_recoleccion": "2012-12-25",
+      "imagen": "String",
+      "latitud": "4°19′58″N",
+      "longitud": "75°42′20″O",
+      "nombre": "Prueba1",
+      "observaciones": " familia de las rubiaceas, nativas del sur de Asia y el Africa subtropical.",
+      "divipola": "3",
+      "genero": "3"
+    }
+    ,
+    {
+      "id_especie": "5",
+      "creacion": "2012-12-30",
+      "fecha_recoleccion": "2012-12-25",
+      "imagen": "String",
+      "latitud": "4°19′58″N",
+      "longitud": "75°42′20″O",
+      "nombre": "Prueba2",
+      "observaciones": " familia de las rubiaceas, nativas del sur de Asia y el Africa subtropical.",
+      "divipola": "3",
+      "genero": "3"
+    }
+    ,
+    {
+      "id_especie": "6",
+      "creacion": "2012-12-30",
+      "fecha_recoleccion": "2012-12-25",
+      "imagen": "String",
+      "latitud": "4°19′58″N",
+      "longitud": "75°42′20″O",
+      "nombre": "Prueba555",
+      "observaciones": " familia de las rubiaceas, nativas del sur de Asia y el Africa subtropical.",
+      "divipola": "3",
+      "genero": "3"
+    }
+  ]
+}

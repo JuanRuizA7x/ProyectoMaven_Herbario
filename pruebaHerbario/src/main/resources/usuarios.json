@@ -1,0 +1,66 @@
+{
+  "USUARIO": [
+    {
+      "cedula_id": "12345",
+      "dtype": "Administrador",
+      "activo": true,
+      "apellido": "Ocampo",
+      "contrasenia": "12345",
+      "creacion": "2014-06-25",
+      "email": "prueba@prueba.com",
+      "nombre": "jhonny"
+    },
+    {
+      "cedula_id": "22222",
+      "dtype": "Empleado",
+      "activo": true,
+      "apellido": "Ocampo",
+      "contrasenia": "12345",
+      "creacion": "2014-06-25",
+      "email": "prueba2@prueba.com",
+      "nombre": "carlos"
+    },
+    {
+      "cedula_id": "33333",
+      "dtype": "Recolector",
+      "activo": true,
+      "apellido": "Ocampo",
+      "contrasenia": "12345",
+      "creacion": "2014-06-25",
+      "email": "prueba1@prueba.com",
+      "nombre": "juank"
+    },
+    {
+      "cedula_id": "4444",
+      "dtype": "Recolector",
+      "activo": true,
+      "apellido": "Londonio",
+      "contrasenia": "12345",
+      "creacion": "2014-06-25",
+      "email": "prueba1@prueba.com",
+      "nombre": "cesar"
+    }
+  ],
+  "RECOLECTOR": [
+    {
+      "cedula_id": "33333"
+    },{
+      "cedula_id": "4444"
+    }
+  ],
+  "EMPLEADO": [
+    {
+      "cedula_id": "22222",
+      "salario": 5000000
+    },
+    {
+      "cedula_id": "12345",
+      "salario": 5000000
+    }
+  ],
+  "ADMINISTRADOR": [
+    {
+      "cedula_id": "12345"
+    }
+  ]
+}

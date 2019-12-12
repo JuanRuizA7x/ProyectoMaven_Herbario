@@ -1,0 +1,25 @@
+{
+  "FAMILIA": [
+    {
+      "familia_id": "1",
+      "activo": true,
+      "creacion": "2014-06-25",
+      "descripcion": "Familia de las orquideas",
+      "nombre": "Orquideas"
+    },
+    {
+      "familia_id": "2",
+      "activo": true,
+      "creacion": "2014-12-23",
+      "descripcion": "Familia de las leguminosas",
+      "nombre": "Leguminosas"
+    },
+    {
+      "familia_id": "3",
+      "activo": true,
+      "creacion": "2012-04-20",
+      "descripcion": "Familia de las orquideas rubiaceas",
+      "nombre": "Rubiaceas"
+    }
+  ]
+}

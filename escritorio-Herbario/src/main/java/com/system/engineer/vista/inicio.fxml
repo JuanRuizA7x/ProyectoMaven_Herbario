@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane onMouseEntered="#prueba" prefHeight="733.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.engineer.controlador.InicioControlador">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaLogin" text="Iniciar Sesión" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuOpciones" mnemonicParsing="false" text="Opciones">
+               <items>
+                  <MenuItem fx:id="menuItemEmpleado" mnemonicParsing="false" onAction="#ventanaDetalleEmpleado" text="Empleado" />
+                  <MenuItem fx:id="menuItemRecolector" mnemonicParsing="false" onAction="#ventanaDetalleRecolector" text="Recolector" />
+                  <MenuItem fx:id="menuItemFamilia" mnemonicParsing="false" onAction="#ventanaDetalleFamilia" text="Familia" />
+                  <MenuItem fx:id="menuItemGenero" mnemonicParsing="false" onAction="#ventanaDetalleGenero" text="Género" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

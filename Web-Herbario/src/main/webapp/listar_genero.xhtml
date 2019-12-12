@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Listar Genero</title>
+
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+			<div class="card bg-light">
+				<div class="card-header">GENEROS REGISTRADOS</div>
+				<div class="card-body">
+
+
+					<h:form>
+						<h:dataTable value="#{generoBean.generos}" var="genero"
+							styleClass="table table-striped">
+
+							<h:column scope="col">
+								<f:facet name="header">Id</f:facet>
+								<h:outputText value="#{genero.id}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Nombre</f:facet>
+								<h:outputText value="#{genero.nombre}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Descripcion</f:facet>
+								<h:outputText value="#{genero.descripcion} "></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Familia</f:facet>
+								<h:outputText value="#{genero.familia.nombre} "></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Creación</f:facet>
+								<h:outputText value="#{genero.createAt}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Estado</f:facet>
+								<h:outputText value="#{genero.activo}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Cambiar estado</f:facet>
+								<h:commandButton
+									action="#{generoBean.cambiarEstado(genero.nombre)}"
+									value="#{genero.activo?'Desactivar':'Activar'}"
+									class="#{genero.activo?'btn btn-danger btn-xs':'btn btn-success btn-xs'}"></h:commandButton>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Editar</f:facet>
+
+								<h:commandButton action="#{generoBean.editar(genero.nombre)}"
+									value="Editar" class="btn btn-primary btn-xs">
+								</h:commandButton>
+							</h:column>
+
+						</h:dataTable>
+
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

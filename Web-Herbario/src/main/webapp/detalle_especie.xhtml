@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Detalle Especie</title>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+
+			<div class="card bg-light">
+				<div class="card-header">Detalle Especie</div>
+				<div class="card-body">
+					
+					
+					<h4 class="display-4">Información general</h4>
+					<hr></hr>
+					
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel for="idEspecie"
+								value="Id:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-2 col-form-label" for="idEspecie"
+									value="#{reg.especie.id}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="nombreEspecie" value="Nombre:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="nombreEspecie" value="#{reg.especie.id}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="descripcionEspecie" value="Descripción:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="descripciónEspecie" value="#{reg.especie.observaciones}" />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="fechaRecoleccionEspecie" value="Fecha de recolección:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="fechaRecoleccionEspecie"
+									value="#{reg.especie.fechaRecoleccion}" />
+							</div>
+						</div>
+						
+						<h4 class="display-4">Taxonomía</h4>
+						<hr></hr>
+						
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="familiaEspecie" value="Familia" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="familiaEspecie" value="#{reg.especie.genero.familia.nombre}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="generoEspecie" value="Género" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="generoEspecie" value="#{reg.especie.genero.nombre}" />
+							</div>
+						</div>
+						
+						<h4 class="display-4">Información geográfica</h4>
+						<hr></hr>
+						
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="latitudEspecie" value="Latitud:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="latitudEspecie" value="#{reg.especie.latitud}" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="longitudEspecie" value="Longitud:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="longitudEspecie" value="#{reg.especie.longitud}" />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="departamentoEspecie" value="Departamento:" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="departamentoEspecie" value="#{reg.especie.divipola.departamento}" />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<strong class="col-sm-2 col-form-label"><h:outputLabel
+								for="municipioEspecie" value="Municipio" /></strong>
+							<div class="col-sm-10">
+								<h:outputLabel class="col-sm-10 col-form-label"
+									for="municipioEspecie" value="#{reg.especie.divipola.municipio}" />
+							</div>
+						</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

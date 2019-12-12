@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Listar Empleado</title>
+	<f:event listener="#{permisosBean.verificarSesionAdmin}"
+		type="preRenderView"></f:event>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+			<div class="card bg-light">
+				<div class="card-header">Empleados Registrados</div>
+				<div class="card-body">
+					<h:form>
+						<h:dataTable value="#{empleadoBean.empleados}" var="emple"
+							styleClass="table table-striped">
+
+							<h:column scope="col">
+								<!-- column header -->
+								<f:facet name="header">Cedula</f:facet>
+								<!-- row record -->
+								<h:outputText value="#{emple.cedula}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Nombre</f:facet>
+								<h:outputText value="#{emple.nombre}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Apellido</f:facet>
+								<h:outputText value="#{emple.apellido}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Email</f:facet>
+								<h:outputText value="#{emple.email}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Salario</f:facet>
+								<h:outputText value="#{emple.salario}"></h:outputText>
+							</h:column>
+							
+							<h:column scope="col">
+								<f:facet name="header">Estado</f:facet>
+								<h:outputText value="#{emple.activo}"></h:outputText>
+							</h:column>
+							
+							<h:column scope="col">
+								<f:facet name="header">Cambiar estado</f:facet>
+								<h:commandButton
+									action="#{empleadoBean.cambiarEstado(emple.cedula)}"
+									value="#{emple.activo?'Desactivar':'Activar'}"
+									class="#{emple.activo?'btn btn-danger btn-xs':'btn btn-success btn-xs'}"></h:commandButton>
+							</h:column>
+							
+							<h:column scope="col">
+								<f:facet name="header">Editar</f:facet>
+								<h:commandButton action="#{empleadoBean.editar(emple.cedula)}"
+									value="Editar" class="btn btn-primary btn-xs"></h:commandButton>
+							</h:column>
+
+							
+						</h:dataTable>
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

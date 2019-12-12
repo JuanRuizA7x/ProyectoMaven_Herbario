@@ -1,0 +1,19 @@
+{
+  "DIVIPOLA": [
+    {
+      "divipolas_id": "1",
+      "departamento": "Quindio",
+      "municipio": "Calarca"
+    },
+    {
+      "divipolas_id": "2",
+      "departamento": "Quindio",
+      "municipio": "Armenia"
+    },
+    {
+      "divipolas_id": "3",
+      "departamento": "Quindio",
+      "municipio": "Pijao"
+    }
+  ]
+}

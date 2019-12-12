@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Registrar Especie</title>
+	<f:event listener="#{permisosBean.verificarSesion}" type="preRenderView"></f:event>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+
+<div class="card bg-light">
+				<div class="card-header">Registrar Especie</div>
+				<div class="card-body">
+			<h:form>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="nombreEspecie"
+						value="Nombre" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="nombreEspecie"
+							value="#{registroBean.especie.nombre}" required="true"
+							a:placeholder="Ingrese el nombre" />
+						<small><h:message for="nombreEspecie"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="observacionesEspecie" value="Observaciones" />
+					<div class="col-sm-10">
+						<h:inputTextarea class="form-control" id="observacionesEspecie"
+							value="#{registroBean.especie.observaciones}"
+							a:placeholder="Ingrese las observaciones" />
+						<small><h:message for="observacionesEspecie"
+								class="form-text text-danger" /></small>
+					</div>
+
+				</div>
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="fechaRecoleccionEspecie" value="Fecha recolección" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="fechaRecoleccionEspecie"
+							value="#{registroBean.especie.fechaRecoleccion}" required="true"
+							a:placeholder="Ingrese la fecha de recolección">
+							<f:convertDateTime pattern="yyyy-MM-dd" />
+						</h:inputText>
+						<small><h:message for="fechaRecoleccionEspecie"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="latitudEspecie"
+						value="Latitud" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="latitudEspecie"
+							value="#{registroBean.especie.latitud}" required="true"
+							a:placeholder="Ingrese la latitud" />
+						<small><h:message for="latitudEspecie"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="longitudEspecie" value="Longitud" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="longitudEspecie"
+							value="#{registroBean.especie.longitud}" required="true"
+							a:placeholder="Ingrese la longitud" />
+						<small><h:message for="longitudEspecie"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+				
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="genero"
+						value="Genero" />
+					<div class="col-sm-10">
+						<h:selectOneMenu id="genero" class="form-control"
+							value="#{registroBean.especie.genero}" required="true"
+							converter="omnifaces.SelectItemsConverter">
+							<f:selectItem itemLabel="Seleccione un genero" />
+							<f:selectItems value="#{generoBean.generos}" var="gene"
+								itemLabel="#{gene.nombre}" />
+						</h:selectOneMenu>
+						<small><h:message for="genero"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+				
+				
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="divipola"
+						value="Divipola" />
+					<div class="col-sm-10">
+						<h:selectOneMenu id="divipola" class="form-control"
+							value="#{registroBean.especie.divipola}" required="true"
+							converter="omnifaces.SelectItemsConverter">
+							<f:selectItem itemLabel="Seleccione una divipola" />
+							<f:selectItems value="#{divipolaBean.divipolas}" var="divi"
+								itemLabel="#{divi.municipio}" />
+						</h:selectOneMenu>
+						<small><h:message for="divipola"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<h:commandButton value="Agregar" action="#{registroBean.registrar}"
+					class="btn btn-primary" id="agregarRegistro" />
+			</h:form>
+</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

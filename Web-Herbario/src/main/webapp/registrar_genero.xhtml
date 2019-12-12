@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Registrar genero</title>
+	<f:event listener="#{permisosBean.verificarSesionAdmin}" type="preRenderView"></f:event>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+
+<div class="card bg-light">
+				<div class="card-header">Registrar genero</div>
+				<div class="card-body">
+			<h:form>
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="nombreGenero"
+						value="Nombre" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="nombreGenero"
+							value="#{generoBean.genero.nombre}" required="true"
+							a:placeholder="Ingrese el nombre">
+						</h:inputText>
+						<small><h:message for="nombreGenero"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="descripcionGenero" value="Descripción" />
+					<div class="col-sm-10">
+						<h:inputTextarea class="form-control" id="descripcionGenero"
+							value="#{generoBean.genero.descripcion}"
+							a:placeholder="Ingrese la descripción" />
+						<small><h:message for="descripcionGenero"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="familia"
+						value="Familia" />
+					<div class="col-sm-10">
+						<h:selectOneMenu id="familia" class="form-control"
+							value="#{generoBean.genero.familia}" required="true"
+							converter="selectItemObjectConverter">
+							<f:selectItem itemLabel="Seleccione una familia" noSelectionOption="true"/>
+							<f:selectItems value="#{familiaBean.familias}" var="fami"
+								itemLabel="#{fami.nombre}" />
+						</h:selectOneMenu>
+						<small><h:message for="familia"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+
+				<h:commandButton value="Agregar" action="#{generoBean.registrar}"
+					class="btn btn-primary" id="agregarGenero" />
+			</h:form>
+</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

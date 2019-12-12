@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Recuperar Contraseña</title>
+	<f:event listener="#{permisosBean.nombrePermiso}" type="preRenderView"></f:event>
+	<f:event listener="#{permisosBean.verificarSesionLogin}" type="preRenderView"></f:event>
+</h:head>
+<body>
+
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+		<div class="card bg-light">
+				<div class="card-header">Recuperar Contraseña</div>
+				<div class="card-body">
+			<h:form>
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="emailUsuario"
+						value="Email" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="emailUsuario"
+							value="#{usuarioBean.destinatario}" required="true"
+							a:placeholder="Ingrese el email">
+						</h:inputText>
+						<small><h:message for="emailUsuario"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<h:commandButton value="Iniciar sesión"
+					action="#{usuarioBean.prueba}" class="btn btn-primary"
+					id="recuperarContrasenia" />
+			</h:form>
+			</div>
+			</div>
+		</ui:define>
+
+	</ui:decorate>
+
+</body>
+</html>

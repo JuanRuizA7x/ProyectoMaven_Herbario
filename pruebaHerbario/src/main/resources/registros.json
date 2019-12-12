@@ -1,0 +1,52 @@
+{
+	"REGISTRO": [
+		{
+			"id_registro": "1",
+			"creacion": "2013-07-20",
+			"descripcion": "asdfghjkl",
+			"opciones": "RECHAZADA",
+			"usuario": "12345",
+			"especie": "1"
+		},
+		{
+			"id_registro": "2",
+			"creacion": "2015-02-15",
+			"descripcion": "qwertyuiop",
+			"opciones": "AGREGADA",
+			"usuario": "22222",
+			"especie": "2"
+		},
+		{
+			"id_registro": "3",
+			"creacion": "2012-12-30",
+			"descripcion": "zxcvbnm",
+			"opciones": "ELIMINADA",
+			"usuario": "33333",
+			"especie": "3"
+		},
+		{
+			"id_registro": "4",
+			"creacion": "2012-12-30",
+			"descripcion": "zxcvbnm",
+			"opciones": "AGREGADA",
+			"usuario": "33333",
+			"especie": "4"
+		},
+		{
+			"id_registro": "5",
+			"creacion": "2012-12-30",
+			"descripcion": "zxcvbnm",
+			"opciones": "ELIMINADA",
+			"usuario": "33333",
+			"especie": "5"
+		},
+		{
+			"id_registro": "6",
+			"creacion": "2012-12-30",
+			"descripcion": "zxcvbnm",
+			"opciones": "AGREGADA",
+			"usuario": "22222",
+			"especie": "6"
+		}
+	]
+}

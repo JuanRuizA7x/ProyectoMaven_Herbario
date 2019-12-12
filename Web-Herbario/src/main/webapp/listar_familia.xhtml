@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Listar Familia</title>
+	<f:event listener="#{permisosBean.verificarSesionAdmin}" type="preRenderView"></f:event>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+			<div class="card bg-light">
+				<div class="card-header">Familias Registradas</div>
+				<div class="card-body">
+
+					<h:form>
+						<h:dataTable value="#{familiaBean.familias}" var="familia"
+							styleClass="table table-striped">
+
+							<h:column scope="col">
+								<f:facet name="header">Id</f:facet>
+								<h:outputText value="#{familia.id}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Nombre</f:facet>
+								<h:outputText value="#{familia.nombre}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Descripcion</f:facet>
+								<h:outputText value="#{familia.descripcion} "></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Creación</f:facet>
+								<h:outputText value="#{familia.createAt}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Estado</f:facet>
+								<h:outputText value="#{familia.activo}"></h:outputText>
+							</h:column>
+							
+							<h:column scope="col">
+								<f:facet name="header">Cambiar estado</f:facet>
+								<h:commandButton
+									action="#{familiaBean.cambiarEstado(familia.nombre)}"
+									value="#{familia.activo?'Desactivar':'Activar'}"
+									class="#{familia.activo?'btn btn-danger btn-xs':'btn btn-success btn-xs'}"></h:commandButton>
+							</h:column>
+							
+							<h:column scope="col">
+								<f:facet name="header">Editar</f:facet>
+
+								<h:commandButton action="#{familiaBean.editar(familia.id)}"
+									value="Editar" class="btn btn-primary btn-xs">
+								</h:commandButton>
+							</h:column>
+
+						</h:dataTable>
+
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

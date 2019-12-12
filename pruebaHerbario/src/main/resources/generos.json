@@ -1,0 +1,28 @@
+{
+  "GENERO": [
+    {
+      "ID": "1",
+      "activo": true,
+      "creacion": "2019-04-28",
+      "descripcion": "genero orquidea1",
+      "nombre": "Orquideas",
+      "familia": "1"
+    },
+    {
+      "ID": "2",
+      "activo": true,
+      "creacion": "2014-12-23",
+      "descripcion": "genero leguminosa",
+      "nombre": "Leguminosas",
+      "familia": "2"
+    },
+    {
+      "ID": "3",
+      "activo": true,
+      "creacion": "2012-04-20",
+      "descripcion": "genero Rubiacea1",
+      "nombre": "Rubiaceas",
+      "familia": "3"
+    }
+  ]
+}

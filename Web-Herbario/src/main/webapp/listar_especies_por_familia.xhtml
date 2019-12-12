@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Especies Por Familia</title>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+			<div class="card bg-light">
+				<div class="card-header">Especies Por Familia</div>
+
+				<div class="card-body">
+
+					<h:form>
+						<h:selectOneMenu id="familia" class="form-control"
+							value="#{registroBean.familia}"
+							converter="omnifaces.SelectItemsConverter">
+							<f:selectItems value="#{familiaBean.familias}" var="fam"
+								itemLabel="#{fam.nombre}" />
+							<f:ajax render="tablaEspecies" />
+						</h:selectOneMenu>
+						<small><h:message for="familia"
+								class="form-text text-danger" /></small>
+
+						<h:dataTable id="tablaEspecies"
+							value="#{registroBean.registrosPorFamilia}" var="regis"
+							styleClass="table table-striped">
+
+							<h:column scope="col">
+								<f:facet name="header">Id</f:facet>
+								<h:outputText value="#{regis.especie.id}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Nombre</f:facet>
+								<h:outputText value="#{regis.especie.nombre}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Descripción</f:facet>
+								<h:outputText value="#{regis.especie.observaciones} "></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Género</f:facet>
+								<h:outputText value="#{regis.especie.genero.nombre}"></h:outputText>
+							</h:column>
+
+							<h:column scope="col">
+								<f:facet name="header">Familia</f:facet>
+								<h:outputText value="#{regis.especie.genero.familia.nombre}"></h:outputText>
+							</h:column>
+
+						</h:dataTable>
+
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+</body>
+</html>

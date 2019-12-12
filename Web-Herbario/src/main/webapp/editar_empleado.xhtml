@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Modificar Empleado</title>
+	<f:event listener="#{permisosBean.verificarSesionAdmin}" type="preRenderView"></f:event>
+</h:head>
+<body>
+	<ui:decorate template="Template/template.xhtml">
+
+		<ui:define name="content">
+<div class="card bg-light">
+				<div class="card-header">Modificar Empleado</div>
+				<div class="card-body">
+			<h:form>
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="cedulaEmpleado"
+						value="Cedula" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="cedulaEmpleado"
+							value="#{emple.cedula}" required="true"
+							a:placeholder="Ingrese la cedula"
+							validatorMessage="la cedula debe tener mas de 2 caracteres" disabled = "true">
+							<f:validateLength minimum="2" maximum="15" />
+						</h:inputText>
+						<small><h:message for="cedulaEmpleado"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="nombreEmpleado"
+						value="Nombre" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="nombreEmpleado"
+							value="#{emple.nombre}"
+							a:placeholder="Ingrese el nombre" />
+						<small><h:message for="nombreEmpleado"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="apellidoEmpleado" value="Apellido" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="apellidoEmpleado"
+							value="#{emple.apellido}"
+							a:placeholder="Ingrese el apellido" />
+						<small><h:message for="apellidoEmpleado"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label" for="emailEmpleado"
+						value="Email" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="emailEmpleado"
+							value="#{emple.email}" required="true"
+							a:placeholder="Ingrese el email" />
+						<small><h:message for="emailEmpleado"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="contraseniaEmpleado" value="Clave" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="contraseniaEmpleado"
+							value="#{emple.contrasenia}" required="true"
+							a:placeholder="Ingrese la contraseña" />
+						<small><h:message for="contraseniaEmpleado"
+								class="form-text text-danger" /></small>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<h:outputLabel class="col-sm-2 col-form-label"
+						for="salarioEmpleado" value="Salario" />
+					<div class="col-sm-10">
+						<h:inputText class="form-control" id="salarioEmpleado"
+							value="#{emple.salario}"
+							a:placeholder="Ingrese el salario">
+							<f:convertNumber />
+							<small><h:message for="salarioEmpleado"
+									class="form-text text-danger" /></small>
+						</h:inputText>
+					</div>
+				</div>
+
+				<h:commandButton value="Modificar" action="#{empleadoBean.actualizar(emple)}"
+					class="btn btn-primary" id="editarEmpleado" />
+			</h:form>
+</div>
+			</div>
+		</ui:define>
+	</ui:decorate>
+	
+</body>
+</html>

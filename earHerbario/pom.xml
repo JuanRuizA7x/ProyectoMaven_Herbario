@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.system.engineer</groupId>
+    <artifactId>ProyectoHerbario</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>earHerbario</artifactId>
+  <packaging>ear</packaging>
+  <name>earHerbario</name>
+  <description>earHerbario</description>
+    <dependencies>
+  	<dependency>
+  		<groupId>com.system.engineer</groupId>
+  		<artifactId>negocioHerbario</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>ejb</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.system.engineer</groupId>
+  		<artifactId>persistenciaHerbario</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.system.engineer</groupId>
+  		<artifactId>Web-Herbario</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>war</type>
+  	</dependency>
+  </dependencies>
+</project>
